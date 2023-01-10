@@ -27,7 +27,7 @@ public class Salle implements Serializable {
     @ManyToOne
     Cinema cinema;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     List<Film> listFilms;
 
 

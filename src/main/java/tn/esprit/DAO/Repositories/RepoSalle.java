@@ -6,4 +6,5 @@ import tn.esprit.DAO.Entities.Salle;
 
 @Repository
 public interface RepoSalle extends CrudRepository<Salle,Long> {
+    Salle getSalleByNom(String nom);
 }

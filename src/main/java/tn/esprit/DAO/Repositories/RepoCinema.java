@@ -10,8 +10,13 @@ import java.util.List;
 @Repository
 public interface RepoCinema extends CrudRepository<Cinema,Long> {
 
-    List<Cinema> getByNomContains(String nparam);
+    List<Cinema> getCinemaByNomContains(String nom);
 
-    @Query(value="select * from cinema where adresse like %?1%", nativeQuery = true)
-    List<Cinema> searchCinemaByAdresseSQL(String aparam);
+
+    //SQL
+    //Afficher la liste de Cinema dont l'adresse est celui qui est pasé en paramétre (SQL)
+    @Query(value = "select * from cinema where adresse like %?1%", nativeQuery = true)
+    List<Cinema> SearchCinemasByAdresseSQL(String adresse);
+
+
 }
